@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python3 src/prepare.py
+    deps:
+    - path: data/mnist/raw
+      md5: b6c29e96813679dd8c451c9b5ca86e2c.dir
+      size: 11594722
+      nfiles: 4
+    - path: src/prepare.py
+      md5: dda007b7d72ac1964ce279cba9d41778
+      size: 3825
+    params:
+      params.yaml:
+        prepare.remix: false
+        prepare.remix_split: 0.2
+        prepare.seed: 20210428
+    outs:
+    - path: data/mnist/prepared
+      md5: cd35e4ee1528a9e57daf4f7affdb7fe6.dir
+      size: 54951020
+      nfiles: 2

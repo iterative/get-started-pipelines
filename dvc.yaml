@@ -1,0 +1,12 @@
+stages:
+  prepare:
+    cmd: python3 src/prepare.py
+    deps:
+    - data/mnist/raw
+    - src/prepare.py
+    params:
+    - prepare.remix
+    - prepare.remix_split
+    - prepare.seed
+    outs:
+    - data/mnist/prepared
