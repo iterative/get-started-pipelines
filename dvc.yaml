@@ -24,3 +24,27 @@ stages:
     - preprocess.shuffle
     outs:
     - data/mnist/preprocessed/
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - data/mnist/preprocessed/
+    - src/models.py
+    - src/train.py
+    params:
+    - model.cnn.conv_kernel_size
+    - model.cnn.conv_units
+    - model.cnn.dense_units
+    - model.cnn.dropout
+    - model.mlp.activation
+    - model.mlp.units
+    - model.name
+    - model.optimizer
+    - train.batch_size
+    - train.epochs
+    - train.seed
+    - train.validation_split
+    outs:
+    - models/mnist/model.h5
+    plots:
+    - logs.csv:
+        cache: false
