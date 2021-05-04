@@ -77,3 +77,16 @@ stages:
     - path: models/mnist/model.h5
       md5: 763846d264b1c33f038ad7a93f5bd510
       size: 189856
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - path: models/mnist/model.h5
+      md5: 763846d264b1c33f038ad7a93f5bd510
+      size: 189856
+    - path: src/evaluate.py
+      md5: 094358ca814e8c20744720f918ea99b3
+      size: 659
+    outs:
+    - path: metrics.json
+      md5: c2303b7574b9dc2bfefc17f47b453fe2
+      size: 292

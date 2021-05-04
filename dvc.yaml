@@ -48,3 +48,11 @@ stages:
     plots:
     - logs.csv:
         cache: false
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - models/mnist/model.h5
+    - src/evaluate.py
+    metrics:
+    - metrics.json:
+        cache: false
